@@ -8,8 +8,8 @@ export default function Header(props) {
 
   return (
     <div>
-      <Navbar className="navbar-dark bg-dark">
-  <Navbar.Brand href="#">{props.title}</Navbar.Brand>
+<Navbar bg="light" expand="lg">
+    <Navbar.Brand href="#">{props.title}</Navbar.Brand>
   <Navbar.Toggle aria-controls="navbarScroll" />
   <Navbar.Collapse id="navbarScroll">
     <Nav
