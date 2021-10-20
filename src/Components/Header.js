@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavDropdown, Form, FormControl, Button, Nav } from 'react-bootstrap';
+import { propTypes } from 'react-bootstrap/esm/Image';
 import Navbar from 'react-bootstrap/Navbar';
 import  "./style.css";
 
@@ -7,7 +8,7 @@ export default function Header(props) {
 
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar className="navbar-dark bg-dark">
   <Navbar.Brand href="#">{props.title}</Navbar.Brand>
   <Navbar.Toggle aria-controls="navbarScroll" />
   <Navbar.Collapse id="navbarScroll">
@@ -38,4 +39,14 @@ export default function Header(props) {
 </Navbar>
         </div>
     )
+}
+
+Header.defaultProps={
+    title: "This is Your Main Title",
+    Searchbarr: true
+}
+
+Header.prototypes={
+    title: propTypes.string,
+    Searchbarr: propTypes.bool
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 
 export const Footer = () => {
-    return (
-        <div>
-            Footer Works
-        </div>
-    )
+  return (
+    <div>
+      Footer Work
+    </div>
+  )
 }
