@@ -1,14 +1,14 @@
 import React from 'react';
 import { NavDropdown, Form, FormControl, Button, Nav } from 'react-bootstrap';
 import Navbar from 'react-bootstrap/Navbar';
+import  "./style.css";
 
-
-export default function Header() {
+export default function Header(props) {
 
   return (
     <div>
       <Navbar bg="light" expand="lg">
-  <Navbar.Brand href="#">Todo App</Navbar.Brand>
+  <Navbar.Brand href="#">{props.title}</Navbar.Brand>
   <Navbar.Toggle aria-controls="navbarScroll" />
   <Navbar.Collapse id="navbarScroll">
     <Nav
@@ -25,7 +25,7 @@ export default function Header() {
         <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
       </NavDropdown>
     </Nav>
-    <Form className="d-flex">
+    { props.Searchbarr? <Form className="d-flex">
       <FormControl
         type="search"
         placeholder="Search"
@@ -33,7 +33,7 @@ export default function Header() {
         aria-label="Search"
       />
       <Button variant="outline-success">Search</Button>
-    </Form>
+    </Form>: "No Search bar"}
   </Navbar.Collapse>
 </Navbar>
         </div>
