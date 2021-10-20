@@ -32,16 +32,6 @@ function App() {
       title:  "Go to the markeet",
       desc: "You need To 1"
     },
-    {
-      sno: 2,
-      title:  "Go to the mall",
-      desc: "You need To 2"
-    },
-    {
-      sno: 3,
-      title:  "Go to the school",
-      desc: "You need To 3"
-    }
     
   ])
 

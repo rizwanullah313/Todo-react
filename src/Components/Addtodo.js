@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { Form,Button, } from 'react-bootstrap';
 
 
 export const Addtodo = ({addtodo}) => {
     const [title, setTitle] = useState();
     const [desc, setDesc] = useState();
 
-    const submit = (e)=>{
-      e.preventDefault();
+    const submit = (event)=>{
+        event.preventDefault();
       if(!title || !desc){
           alert("Title or description cannot be blank");
       }
@@ -16,23 +15,19 @@ export const Addtodo = ({addtodo}) => {
 
   return (
     <div className="container my-5">
-        <h3>Add a Todo</h3>
-      <Form onSubmit={submit}>
-        <Form.Group className="mb-3" controlId="todotitle">
-          <Form.Label>Todo Title</Form.Label>
-          <Form.Control type="text" placeholder="Todo Title" value={title} onChange={(e)=>setTitle(e.target.value)} />
-          <Form.Text className="text-muted">
-          </Form.Text>
-        </Form.Group>
+         <h3>Add a Todo</h3>
+        <form onSubmit={submit}>
+  <div className="mb-3">
+    <label htmlFor="exampleInputEmail1" className="form-label">Add Todo Item</label>
+    <input type="text" value={title} onChange={(event)=>setTitle(event.target.value || '')} className="form-control" id="addTodo"  />
+  </div>
+  <div className="mb-3">
+    <label htmlFor="" className="form-label">Todo Description</label>
+    <input type="text"  value={desc} onChange={(event)=>setDesc(event.target.value ||'')}  className="form-control" id="tododesc" />
+  </div>
 
-        <Form.Group className="mb-3" controlId="tododesc">
-          <Form.Label>Todo Description</Form.Label>
-          <Form.Control type="text" placeholder="Todo Description" value={desc} onChange={(e)=>setDesc(e.target.value)}  />
-        </Form.Group>
-        <Button variant="primary" type="submit" className="btn btn-sm">
-          Add Todo
-        </Button>
-      </Form>
+  <button type="submit" className="btn btn-primary">Submit</button>
+</form>
     </div>
   );
 };
