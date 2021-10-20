@@ -4,6 +4,11 @@ import Header from "./Components/Header";
 import { Todos } from "./Components/Todos";
 
 function App() {
+
+   const onDelete = (todo) => {
+      console.log("Ondelete work suuccess", todo);
+   }
+
   let todos=[
     {
       sno: 1,
@@ -25,7 +30,7 @@ function App() {
   return (
     <div>
       <Header title="ToDos-App" Searchbarr={true}/>
-      <Todos todos={todos}/>
+      <Todos todos={todos} onDelete={onDelete}/>
       <Footer/>
     </div>
   );

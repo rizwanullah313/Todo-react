@@ -4,8 +4,10 @@ import { Todo } from './Todo'
 export const Todos = (props) => {
     return (
         <div className="container text-center my-3">
-            Todos work
-            <Todo todo={props.todos[2]}/>
+            <h4>Todo-List</h4>
+            {props.todos.map((todo) => {
+                return <Todo todo={todo} key={todo.sno} onDelete={props.onDelete} />
+            })}
         </div>
     )
 }
